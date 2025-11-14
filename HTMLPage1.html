@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GARA CONTACT | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+            position: relative;
+            background: linear-gradient(180deg, #2e003e 0%, #000000 100%);
+            transition: background 5s ease-in-out;
+            color: #fff;
+        }
+
+        /* النجوم */
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0% {
+                transform: translateY(0px);
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-1000px);
+                opacity: 0.5;
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 500px;
+            width: 90%;
+            padding: 50px 35px;
+            text-align: center;
+            background: rgba(30,30,40,0.7);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+            backdrop-filter: blur(15px);
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .container:hover {
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 20px 50px rgba(0,0,0,0.95);
+            }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #ffffffcc;
+            margin-bottom: 50px;
+        }
+
+        .link-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            margin-bottom: 25px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            color: white;
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 7px 25px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+        }
+
+            .link-box:hover {
+                transform: translateY(-5px) scale(1.05);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+                background: rgba(255,255,255,0.1);
+            }
+
+            .link-box span {
+                font-size: 18px;
+            }
+
+            .link-box img {
+                width: 36px;
+                height: 36px;
+                filter: drop-shadow(0 3px 4px rgba(0,0,0,0.7));
+            }
+
+        /* Colors for buttons */
+        .discord {
+            background: #5865F2;
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+        }
+
+        .phone {
+            background: #25D366;
+        }
+
+        .tiktok {
+            background: black;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #ffffff99;
+            margin-top: 30px;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        /* زر كتم الصوت */
+        #mute-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            z-index: 2;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 34px;
+            }
+
+            .link-box span {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- موسيقى خلفية -->
+    <audio id="background-music" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        متصفحك لا يدعم تشغيل الصوت.
+    </audio>
+
+    <!-- زر كتم/تشغيل الصوت -->
+    <button id="mute-btn">🔊 كتم / تشغيل</button>
+
+    <div class="container">
+        <h1>GARA CONTACT</h1>
+        <p class="subtitle">تواصل معي بسهولة وبأسلوب احترافي</p>
+
+        <a href="https://discord.gg/UE8rV7at" target="_blank" class="link-box discord">
+            <span>Server Free Panel Discord</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="Discord">
+        </a>
+
+        <a href="https://www.instagram.com/garaffx01" target="_blank" class="link-box instagram">
+            <span>Instagram</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@garaffx01" target="_blank" class="link-box tiktok">
+            <span>TikTok</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok">
+        </a>
+
+        <a href="tel:+213540420750" class="link-box phone">
+            <span>رقمي</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone">
+        </a>
+
+        <p class="footer-text">by GARA DEV</p>
+    </div>
+
+    <script>
+        // إنشاء نجوم كثيرة وكبيرة وصغيرة
+        const numStars = 300;
+        for (let i = 0; i < numStars; i++) {
+            let star = document.createElement('div');
+            star.className = 'star';
+            let size = Math.random() * 4 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.left = Math.random() * window.innerWidth + 'px';
+            star.style.top = Math.random() * window.innerHeight + 'px';
+            star.style.background = `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 150 + 100)}, 255, ${Math.random()})`;
+            star.style.animationDuration = (Math.random() * 30 + 10) + 's';
+            document.body.appendChild(star);
+        }
+
+        // تغيير تدريجي للألوان الخلفية
+        let colors = [
+            'linear-gradient(180deg, #2e003e 0%, #000000 100%)',
+            'linear-gradient(180deg, #4b0082 0%, #000000 100%)',
+            'linear-gradient(180deg, #6a0dad 0%, #000000 100%)'
+        ];
+        let index = 0;
+        setInterval(() => {
+            document.body.style.background = colors[index];
+            index = (index + 1) % colors.length;
+        }, 7000);
+
+        // كتم وتشغيل الصوت
+        const music = document.getElementById('background-music');
+        const btn = document.getElementById('mute-btn');
+        btn.addEventListener('click', () => {
+            music.muted = !music.muted;
+            btn.textContent = music.muted ? "🔇 صوت مكتوم" : "🔊 تشغيل الصوت";
+        });
+    </script>
+
+</body>
+</html>
